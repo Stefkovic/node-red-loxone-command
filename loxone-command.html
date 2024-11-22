@@ -1,0 +1,63 @@
+<script type="text/javascript">
+    RED.nodes.registerType('loxone-command', {
+        category: 'loxone',
+        color: '#6AC550',
+        paletteLabel: 'command',
+        defaults: {
+            miniserver: { required: true, type: "miniserver" },
+            vti: { required: true },
+            block: { default: "" },
+            blockinput: { default: "" },
+            value: { default: "" },
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "loxone.png",
+        label: function () {
+            return this.vti + "/" + this.block || "loxone-command";
+        },
+        // TODO: Get list of Loxone blocks with abbrevations
+        // oneditprepare: function () {
+        //     $("#node-input-block").typedInput({
+        //         types: [
+        //             {
+        //                 value: "fruit",
+        //                 options: [
+        //                     { value: "Lico", label: "Lighting Controller" },
+        //                     { value: "banana", label: "Banana" },
+        //                     { value: "cherry", label: "Cherry" },
+        //                 ]
+        //             }
+        //         ]
+        //     })
+        // }
+    });
+</script>
+
+
+<script type="text/html" data-template-name="loxone-command">
+    <div class="form-row">
+        <label for="node-input-miniserver"><i class="fa fa-tag"></i> Miniserver</label>
+        <input type="text" id="node-input-miniserver" placeholder="miniserver">
+    </div>
+    <div class="form-row">
+        <label for="node-input-vti"><i class="fa fa-tag"></i> VTI Name</label>
+        <input type="text" id="node-input-vti" placeholder="Virtual Text Input name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-block"><i class="fa fa-tag"></i> Block</label>
+        <input type="text" id="node-input-block" placeholder="Function Block abbreviation">
+    </div>
+    <div class="form-row">
+        <label for="node-input-blockinput"><i class="fa fa-tag"></i> Input</label>
+        <input type="text" id="node-input-blockinput" placeholder="Input abbreviation">
+    </div>
+    <div class="form-row">
+        <label for="node-input-value"><i class="fa fa-tag"></i> Value</label>
+        <input type="text" id="node-input-value" placeholder="Value">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="lower-case">
+    <p>Loxone Command node</p>
+</script>

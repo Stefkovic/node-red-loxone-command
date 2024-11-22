@@ -1,0 +1,36 @@
+<script type="text/javascript">
+    RED.nodes.registerType('miniserver', {
+        category: 'config',
+        defaults: {
+            host: {
+                value: "1.2.3.4",
+                required: true,
+                validate: RED.validators.regex(/^((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\.(?!$)|$)){4}$/)
+            },
+            user: { required: true },
+            password: { required: true }
+        },
+        label: function () {
+            return this.host;
+        },
+        credentials: {
+            user: { type: "text" },
+            password: { type: "password" }
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="miniserver">
+    <div class="form-row">
+        <label for="node-config-input-host"><i class="fa fa-bookmark"></i> Miniserver IP</label>
+        <input type="text" id="node-config-input-host">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-user"><i class="fa fa-bookmark"></i> Username</label>
+        <input type="text" id="node-config-input-user">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-password"><i class="fa fa-bookmark"></i> Password</label>
+        <input type="text" id="node-config-input-password">
+    </div>
+</script>

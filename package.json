@@ -1,0 +1,23 @@
+{
+  "name": "@stefkovic/node-red-loxone-command",
+  "version": "0.0.1",
+  "description": "Node red nodes for Loxone API Connector",
+  "main": "loxone-command.js",
+  "dependencies": {
+    "axios": "^1.7.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marek Stefkovic",
+  "license": "MIT",
+  "keywords": [
+    "node-red"
+  ],
+  "node-red": {
+    "nodes": {
+      "loxone-command": "loxone-command.js",
+      "miniserver": "miniserver.js"
+    }
+  }
+}
